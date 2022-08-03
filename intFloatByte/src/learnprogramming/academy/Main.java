@@ -1,6 +1,6 @@
 package learnprogramming.academy;
 
-import javax.print.attribute.standard.PresentationDirection;
+
 
 public class Main {
 
@@ -173,6 +173,65 @@ public class Main {
         // result =result %3;
         result%=3 ; // 10%3 =1
         System.out.println("10 % 3= "+ result);
+
+
+//        If - then statement (Conditionals  loop)
+//        Always use code block
+        boolean isAlien=false;
+        if(isAlien == false){
+            System.out.println("He is not Alien !");
+        }else{
+            System.out.println("He is Alien !");
+        }
+
+        isAlien =true ;
+        if(isAlien){
+            System.out.println("Now he is Alien !!! ");
+        }
+
+
+//        Logical OR (||) operator and AND  (&&) operator
+        // sing | and &  are bitwise operator working at the bit level
+         int topScore=80;
+        if(topScore<100){
+            System.out.println("You got high Score");
+        }
+        int secondTopScore= 81;
+        // And requires both conditions to be True
+        if( (topScore>80) && (secondTopScore<100)){
+            System.out.println("Greater than second top scorer and less than 100");
+        }
+
+        // OR requires either to be True
+
+        if((topScore>90) || secondTopScore<=90){ // false || true
+            System.out.println("Either or Both of conditions are True");
+        }
+
+//        Short-hand.,  Ternary Operator ? : .
+        boolean isCar=false;
+        boolean wasCar=isCar?true:false;
+        if(wasCar){
+            System.out.println("wasCar is true");
+        }
+
+//        Operator Challenge.
+        double first= 20.00;
+        double second= 80.00;
+
+        double addMutlitply= (first + second) *100.00;
+        System.out.println("Adding first and second and multiply by 100 gives :"+ addMutlitply);
+        double remainderAfter= addMutlitply%40.00;
+        System.out.println("Getting remainder of third step value divided by 40 gives: " + remainderAfter);
+
+        boolean check= remainderAfter ==0 ?true:false;
+        System.out.println(" Remainder 0 or not:  "+ check);
+
+        if(check){
+            System.out.println("No remainder");
+        }else{
+            System.out.println("Got some remainder "+remainderAfter);
+        }
 
     }
 }
