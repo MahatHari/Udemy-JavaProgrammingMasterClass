@@ -55,6 +55,17 @@ public class Main {
         DecimalComparator dc= new DecimalComparator();
         System.out.println(dc.isTeen(14));
 
+//        Method Overloading inside class MethodOverloading
+        MethodOverloading ml= new MethodOverloading();
+        ml.calculateScore("Hari", 3);
+        ml.calculateScore(30);
+
+        FeetAndInchesToCentimeters  fic= new FeetAndInchesToCentimeters();
+        double centimeters= fic.calcFeetAndInchesToCentimeters(-6,13);
+        System.out.println("0 inches to "+ centimeters + "cm.");
+         centimeters= fic.calcFeetAndInchesToCentimeters(140.45);
+        System.out.println("140.45 inches to "+ centimeters + "cm.");
+
     }
 
 //    Java methods
