@@ -86,6 +86,37 @@ public class Main {
         System.out.println(l.isPalindrome(11212));
 
 
+//        Greatest Common Divsor
+        System.out.println(l.getGreatestCommonDivisor(25, 15)); //15
+        System.out.println(l.getGreatestCommonDivisor(12, 30)); // 6
+        System.out.println(l.getGreatestCommonDivisor(9, 18)); //-1
+        System.out.println(l.getGreatestCommonDivisor(81, 153)); //9
+        System.out.println(l.getGreatestCommonDivisor(15, 60)); //15
+
+        System.out.println(l.GCD(25, 15)); //15
+        System.out.println(l.GCD(12, 30)); // 6
+        System.out.println(l.GCD(9, 18)); //-1
+        System.out.println(l.GCD(81, 153)); //9
+        System.out.println(l.GCD(15, 60)); //15
+        System.out.println(l.GCD(13, 29)); //15
+
+//        Print Factors
+        System.out.println("Print Factos of 32");
+        l.printFactors(32);
+        l.printFactors(-2);
+
+//        Perfect numbers (number = sum of factor)
+        System.out.println("28 is perfect number "+ l.isPerfectNumber(28));
+        System.out.println("58 is perfect number "+ l.isPerfectNumber(58));
+
+        for(int i=1; i<60; i++){
+            if(l.isPerfectNumber(i)){
+                System.out.println(i);
+            }
+        }
+
+
+
     }
     public static void printDayOfWeek(int day){
         switch (day){

@@ -107,7 +107,126 @@ public class Loops {
     }
 
     public static int firstAndLastDigitSum(int number){
+        if(number<0){
+            return  -1;
+        }
+        int lastDigit= number%10;
+
+        while(number>9){
+            number/=10;
+        }
+        return number+lastDigit;
 
     }
 
+    public static int getEvenDigitSum(int number){
+        if(number<0){
+            return -1;
+        }
+        int sum=0;
+        int remainder=0;
+        while(number>0){
+            remainder = number%10;
+            sum+= (remainder%2==0) ?remainder:0;
+            number/=10;
+        }
+        return  sum;
+    }
+
+    public static boolean hasSharedDigit(int num1, int num2){
+        if((num1>9 && num1<=99) &&  (num2>9 && num2<=99)){
+            int num1remainder=0;
+            int num2remainder=0;
+            while(num1>9 || num2 >9){
+                 num1remainder= num1%10;
+                 num2remainder=num2%10;
+                if(num1remainder==num2remainder){
+                    return true;
+                }
+                num1/=10;
+                num2/=10;
+                if(num1==num2remainder || num2==num1remainder || num1==num2){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean hasSameLastDigit(int num1, int num2, int num3){
+        if(isValid(num1)&& isValid(num2) && isValid(num3)){
+                if(num1%10==num2%10 || num2%10==num3%10 || num1%10 ==num3%10){
+                    return true;
+                }
+        }
+        return false;
+    }
+    public static boolean isValid(int num){
+        if(num>=10 && num<=1000){
+            return true;
+        }
+        return  false;
+    }
+
+    public static int getGreatestCommonDivisor(int first, int second){
+        if(first >=10 && second>=10){
+            int divisor= first>second ?second:first;
+            while(divisor>0){
+                if(first%divisor==0 && second%divisor==0){
+                    return divisor;
+                }
+                divisor--;
+            }
+        }
+        return -1;
+    }
+
+    // Using Euclid's Algorithm
+    public static  int GCD(int first, int second){
+        if (first>=10 && second >=10){
+            while(first!=second){
+                if(first<second){
+                    second-=first;
+                }else{
+                    first-=second;
+                }
+            }
+            return (first*second)/second;
+        }
+        return -1;
+    }
+
+    public static void printFactors(int number){
+        if(number>0){
+            int i=1;
+            while(i<=number/2){
+                if(number%i==0){
+                    System.out.println(i);
+                }
+                i++;
+            }
+            System.out.println(number);
+        }else{
+            System.out.println("Invalid Value");
+        }
+
+    }
+
+    public static boolean isPerfectNumber(int number){
+        if(number>=1){
+            int sum=0;
+            int i=1;
+            while(i<=number/2){
+                if(number%i==0){
+                    sum+=i;
+                }
+                i++;
+            }
+            if (sum==number){
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
 }
