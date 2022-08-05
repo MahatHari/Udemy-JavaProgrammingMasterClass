@@ -109,11 +109,20 @@ public class Main {
         System.out.println("28 is perfect number "+ l.isPerfectNumber(28));
         System.out.println("58 is perfect number "+ l.isPerfectNumber(58));
 
+        /*
         for(int i=1; i<60; i++){
-            if(l.isPerfectNumber(i)){
+            if(l.isPerfectNumberV2(i)){
                 System.out.println(i);
             }
         }
+        */
+
+//        Number to words
+        NumbersToWords nw= new NumbersToWords();
+        System.out.println( nw.getDigitCount(1234567890));
+
+        System.out.println( nw.reverse(1234567890));
+        nw.numberToWords(1234567890);
 
 
 

@@ -222,11 +222,21 @@ public class Loops {
                 }
                 i++;
             }
-            if (sum==number){
-                return true;
-            }
-            return false;
+            return sum==number ;
         }
         return false;
     }
+
+    public  static  boolean isPerfectNumberV2(int number){
+        int sum=0;
+        int i=1;
+        while(i<=number/2){
+            if(number%i==0)
+                sum+=i;
+            i++;
+        }
+        return number>1 && sum==number;
+    }
+
+//    Or could be shorthanded as return number>1 && sum==number;
 }
