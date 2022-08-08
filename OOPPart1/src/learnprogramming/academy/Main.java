@@ -52,5 +52,15 @@ public class Main {
         number.subtract(one);
         System.out.println("number.real= " + number.getReal());
         System.out.println("number.imaginary= " + number.getImaginary());
+
+//        Test Circle
+        Circle circle = new Circle(3.75);
+        System.out.println("circle.radius= " + circle.getRadius());
+        System.out.println("circle.area= " + circle.getArea());
+        Cylinder cylinder = new Cylinder(5.55, 7.25);
+        System.out.println("cylinder.radius= " + cylinder.getRadius());
+        System.out.println("cylinder.height= " + cylinder.getHeight());
+        System.out.println("cylinder.area= " + cylinder.getArea());
+        System.out.println("cylinder.volume= " + cylinder.getVolume());
     }
 }
