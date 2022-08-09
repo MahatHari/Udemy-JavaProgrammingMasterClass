@@ -32,5 +32,45 @@ public class Main {
         bedRoom.makeBed();
 
         bedRoom.getLamp().turnOn();
+
+//        Player Without Encapsulation
+        Player player= new Player();
+        player.name="John";
+        player.health=20;
+        player.weapon="Sword";
+
+        int damage=10;
+        player.losHealth(damage);
+        System.out.println("Remaining health ="+ player.healthRemaining());
+
+        damage=11;
+        player.losHealth(damage);
+        System.out.println("Remaining health = "+ player.healthRemaining());
+
+//        Printer  Test Codes
+        Printer printer = new Printer(50, true);
+        System.out.println(printer.addToner(50));
+        System.out.println("initial page count = " +printer.getPagesPrinted());
+        int pagesPrinted = printer.printPages(4);
+        System.out.println("Pages printed was " + pagesPrinted +" new total print count for printer = " +printer.getPagesPrinted());
+        pagesPrinted = printer.printPages(2);
+        System.out.println("Pages printed was " + pagesPrinted +" new total print count for printer = " +printer.getPagesPrinted());
+
+//        Burger Test
+        Hamburger hamburger = new Hamburger("Basic", "Sausage", 3.56, "White");
+        hamburger.addHamburgerAddition1("Tomato", 0.27);
+        hamburger.addHamburgerAddition2("Lettuce", 0.75);
+        hamburger.addHamburgerAddition3("Cheese", 1.13);
+        System.out.println("Total Burger price is " + hamburger.itemizeHamburger());
+
+        HealthyBurger healthyBurger = new HealthyBurger("Bacon", 5.67);
+        healthyBurger.addHamburgerAddition1("Egg", 5.43);
+        healthyBurger.addHealthyAddition1("Lentils", 3.41);
+        System.out.println("Total Healthy Burger price is  " + healthyBurger.itemizeHamburger());
+
+        DeluxeBurger db = new DeluxeBurger();
+        db.addHamburgerAddition3("Should not do this", 50.53);
+        System.out.println("Total Deluxe Burger price is " + db.itemizeHamburger());
+
     }
 }
