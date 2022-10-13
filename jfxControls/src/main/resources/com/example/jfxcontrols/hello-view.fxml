@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<GridPane fx:controller="com.example.jfxcontrols.HelloController"
+          xmlns:fx="http://javafx.com/fxml" alignment="CENTER" hgap="10" vgap="10" style="-fx-font-family: sans-serif"
+>
+
+    <Button GridPane.rowIndex="0" GridPane.columnIndex="0" text="Click Me">
+        <graphic>
+            <ImageView>
+                <Image url="@/toolbarButtonGraphics/general/TipOfTheDay24.gif" />
+            </ImageView>
+        </graphic>
+    </Button>
+    <Label  GridPane.columnIndex="1" GridPane.rowIndex="0" text=" The is a label"  textFill="blue" wrapText="true">
+        <font>
+            <Font name="Arial italic" size="16"/>
+        </font>
+        <graphic>
+            <ImageView>
+                <Image  url="@/toolbarButtonGraphics/general/Information24.gif"/>
+            </ImageView>
+        </graphic>
+    </Label>
+    <fx:define>
+        <ToggleGroup fx:id="colorToggleGroup"/>
+    </fx:define>
+
+    <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="0" text="Red" toggleGroup="$colorToggleGroup" selected="true"></RadioButton>
+    <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="1" text="Blue" toggleGroup="$colorToggleGroup"></RadioButton>
+    <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="2" text="Green" toggleGroup="$colorToggleGroup"></RadioButton>
+
+    <VBox GridPane.rowIndex="2" GridPane.columnIndex="0">
+        <CheckBox  text="Gauva" indeterminate="true" />
+        <CheckBox  text="JackFruit" indeterminate="true" />
+        <CheckBox  text="Mango" indeterminate="true" />
+    </VBox>
+    <HBox GridPane.rowIndex="3" GridPane.columnIndex="0" >
+        <ToggleButton text="toggle Me " />
+        <ToggleButton text="toggle Me " />
+        <ToggleButton text="toggle Me " />
+
+    </HBox>
+    <TextField GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="3"></TextField>
+    <PasswordField GridPane.rowIndex="5" GridPane.columnSpan="2" GridPane.columnIndex="0"/>
+    <ComboBox GridPane.rowIndex="5" GridPane.columnIndex="2" >
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Option 1"/>
+                <String fx:value="Option 2"/>
+                <String fx:value="Option 3"/>
+                <String fx:value="Option 4"/>
+            </FXCollections>
+        </items>
+        <value>
+            <String fx:value="This is Default Value"/>
+        </value>
+    </ComboBox>
+
+    <ChoiceBox GridPane.columnIndex="0" GridPane.rowIndex="6">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="choice 1" />
+                <String fx:value="choice 2" />
+                <String fx:value="choice 3" />
+                <String fx:value="choice 4" />
+                <String fx:value="choice 5" />
+                <String fx:value="choice 6" />
+            </FXCollections>
+        </items>
+        <value>
+            <String fx:value="choice 5" />
+        </value>
+    </ChoiceBox>
+
+    <Slider GridPane.rowIndex="7" GridPane.columnIndex="0" GridPane.columnSpan="3" min="0" max="100" showTickLabels="true" showTickMarks="true" style="-fx-font-family: sans-serif" />
+
+</GridPane>
