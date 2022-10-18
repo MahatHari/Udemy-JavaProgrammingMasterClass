@@ -8,7 +8,7 @@ public class AnnotationAndValueDemo {
         // Get spring container or context
         ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("applicationContext.xml");
         // get beans
-        Coach fileFortune = context.getBean("fCoach", FileFortuneCoach.class);
+        Coach fileFortune = context.getBean("fileFortuneCoach", FileFortuneCoach.class);
 
 
         System.out.println(fileFortune.getDailyFortune());

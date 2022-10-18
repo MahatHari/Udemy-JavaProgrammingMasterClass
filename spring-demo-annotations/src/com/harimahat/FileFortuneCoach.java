@@ -6,12 +6,12 @@ import org.springframework.stereotype.Component;
 
 
 
-@Component("fCoach")
+@Component
 public class FileFortuneCoach implements Coach{
 
     @Autowired
     @Qualifier("fileFortuneService")
-    private FortuneService fs;
+    private FortuneService fortuneService;
 
     @Override
     public String getDailyWorkout() {
@@ -20,6 +20,6 @@ public class FileFortuneCoach implements Coach{
 
     @Override
     public String getDailyFortune() {
-        return fs.getDailyFortune();
+        return fortuneService.getDailyFortune();
     }
 }

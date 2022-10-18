@@ -5,9 +5,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("tennisCoach")
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+@Component
 // Default @Scope is singleton
- @Scope("prototype")
+ // @Scope("prototype")
 public class TennisCoach implements Coach{
     private FortuneService fortuneService;
 
@@ -15,6 +18,12 @@ public class TennisCoach implements Coach{
     public TennisCoach(@Qualifier("RESTFortuneService") FortuneService randomFortuneService){
         System.out.println("TennisCoach: inside arg constructor");
         this.fortuneService=randomFortuneService;
+    }
+
+    // define init method, runs after constructor and injection of dependencies
+    @PostConstruct
+    public void doMyStartupStuff(){
+        System.out.println("Inside >> doMyStartupStuff");
     }
 
     @Override
@@ -25,6 +34,11 @@ public class TennisCoach implements Coach{
     @Override
     public String getDailyWorkout(){
         return "Practice your backhand volley";
+    }
+
+    @PreDestroy
+    public  void doMyCleanupStuff(){
+        System.out.println("Inside:> doMyCleanupStuff");
     }
 
 }
