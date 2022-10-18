@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.DateCell?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.HBox?>
+<GridPane alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml"
+          fx:controller="hari.fx.learnfx.HelloController" hgap="10" vgap="10">
+    <!--<ColorPicker GridPane.columnIndex="0" GridPane.rowIndex="0"  />
+    <DatePicker GridPane.rowIndex="1" GridPane.columnIndex="0" />-->
+
+   <!-- <Accordion GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2">
+        <panes>
+            <TitledPane text="Titled Pane One">
+                <Label text="Label One  in titled Pane" />
+            </TitledPane>
+            <TitledPane text="Titled Pane Two">
+                <Label text="Label One  in titled Pane" />
+            </TitledPane>
+            <TitledPane text="Titled Pane Three">
+                <Label text="Label One  in titled Pane" />
+            </TitledPane>
+        </panes>
+    </Accordion>-->
+    <padding>
+        <Insets bottom="10" top="10"/>
+    </padding>
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" spacing="10">
+        <TextField fx:id="nameField"  onKeyReleased="#handleKeyReleased"/>
+        <CheckBox text="Clear the field after saying Hello or Bye"  GridPane.columnSpan="2" fx:id="ourCheckBox"/>
+
+    </HBox>
+
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="1" spacing="10">
+
+        <Button  text="Hello" onAction="#onHelloButtonClick" fx:id="helloButton"/>
+        <Button  text="Bye" onAction="#onHelloButtonClick" fx:id="byeButton"/>
+
+    </HBox>
+
+    <Label GridPane.rowIndex="2" GridPane.columnSpan="2" GridPane.columnIndex="0" fx:id="welcomeText"></Label>
+
+</GridPane>

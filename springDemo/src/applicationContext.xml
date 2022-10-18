@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd"
+
+>
+
+
+    <!--Load properties file in spring config file-->
+    <context:property-placeholder location="classpath:sport.properties" />
+    <bean id="myFortuneService" class="com.harimahat.HappyFortuneService">
+
+    </bean>
+    <bean id="fileFortune" class="com.harimahat.FileFortuneService">
+        <constructor-arg value="/Users/harimahat/Desktop/JavaMasterClass/springDemo/src/fortunes.txt"/>
+    </bean>
+    <bean id="myCoach" class="com.harimahat.TrackCoach">
+<!--        Setup constructor Injection-->
+        <constructor-arg ref="myFortuneService"></constructor-arg>
+    </bean>
+    <bean id="hisCoach" class="com.harimahat.BaseballCoach">
+        <constructor-arg ref="myFortuneService"></constructor-arg>
+    </bean>
+    
+    <bean id="circketCoach" class="com.harimahat.CricketCoach">
+        <property name="cricketFortune" ref="fileFortune" >
+        </property>
+        <!--Reference Value from properties file-->
+        <property name="emailAddress" value="${hyderabad.email}" >
+        </property>
+        <property name="team" value="${hyderabad.team}" />
+    </bean>
+
+</beans>

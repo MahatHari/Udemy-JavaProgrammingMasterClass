@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.geometry.Insets?>
+<!--
+<GridPane fx:controller="com.example.startfx.HelloController"
+          xmlns:fx="http://javafx.com.fxml" alignment="center" hgap="10" vgap="10"
+          gridLinesVisible="true"
+>
+    &lt;!&ndash;<Label text="Welcome to JavaFx!  " textFill="chartreuse">
+        <font>
+            <Font name="Times New Roman bold" size="70"></Font>
+        </font>
+
+
+
+    </Label>&ndash;&gt;
+&lt;!&ndash;    columnContraints give width to columns&ndash;&gt;
+   &lt;!&ndash; <columnConstraints>
+        <ColumnConstraints percentWidth="50.0"/>
+        <ColumnConstraints percentWidth="50.0"/>
+    </columnConstraints>&ndash;&gt;
+  &lt;!&ndash;          Adding Padding
+    <padding>
+        <Insets top="10"/>
+    </padding>
+&lt;!&ndash;    GridPane.halignment gives horizontal alignment &ndash;&gt;
+
+    <Button text="Button One" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.halignment="RIGHT"></Button>
+    <Button text="Button Two" GridPane.rowIndex="0" GridPane.columnIndex="1"></Button>
+    <Button text="Button Three" GridPane.rowIndex="1" GridPane.columnIndex="0"></Button>
+    <Button text=" Really long Button Really long Button Really long Button Really long Button " GridPane.rowIndex="1" GridPane.columnIndex="1"></Button>
+    <Button text=" Button Five" GridPane.rowIndex="2" GridPane.columnIndex="0"></Button>&ndash;&gt;
+</GridPane>
+-->
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane  fx:controller="com.example.startfx.HelloController"
+             xmlns:fx="http://javafx.com.fxml" >
+    <top>
+            <Label text="This is top "  alignment="CENTER" style="-fx-border-width: 5; -fx-border-color: red;" BorderPane.alignment="CENTER"/>
+    </top>
+    <left  >
+        <Label text="This is Left Side" prefWidth="150"/>
+    </left>
+    <center>
+        <Label text="This is Center "/>
+    </center>
+    <right>
+        <Label text="This is Right" prefWidth="150"/>
+    </right>
+<bottom>
+    <HBox spacing="10" alignment="top_right">
+        <padding>
+            <Insets right="10" left="10" bottom="10"></Insets>
+        </padding>
+    <Button text="login" prefHeight="40" prefWidth="90"></Button>
+    <Button text="logout"  prefHeight="40" prefWidth="90"></Button>
+    <Button text="signup"  prefHeight="40" prefWidth="90"></Button>
+    </HBox>
+</bottom>
+
+</BorderPane>
+
